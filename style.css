@@ -1,78 +1,266 @@
-/* Base Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
+/* ===== BASE STYLES ===== */
+:root {
+    --primary-color: #ff9a3c;
+    --secondary-color: #ff6b6b;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #fff4e0;
+    --card-bg: #fff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== HEADER ===== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #ff9a3c;
+    padding: 1.5rem 5%;
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--box-shadow);
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 24px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 1px;
 }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #fff;
+nav {
+    display: flex;
+    gap: 2rem;
 }
 
-/* Hero Section */
+    nav a {
+        font-weight: 500;
+        color: var(--text-light);
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+    }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+    .btn-primary:hover {
+        background-color: #e05a5a;
+        transform: translateY(-2px);
+        box-shadow: var(--box-shadow);
+    }
+
+/* ===== HERO SECTION ===== */
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    background-color: #fff4e0;
+    padding: 5rem 2rem;
+    background: linear-gradient(rgba(255, 154, 60, 0.1), rgba(255, 154, 60, 0.05));
 }
 
-.btn-menu, .btn-call, .btn-buy {
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+    }
+
+/* ===== MENU SECTION ===== */
+.menu {
+    padding: 4rem 5%;
 }
 
-/* Food Cards */
-/* Фіксуємо розмір фото у картках */
-.food-card img {
-    width: 100%;
-    height: 180px; /* Фіксована висота */
-    object-fit: cover; /* Обрізає зайве, зберігаючи пропорції */
-    object-position: center; /* Центрує зображення */
-    border-radius: 8px 8px 0 0; /* Закруглені кути зверху */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    position: relative;
 }
 
-/* Додаткові покращення для карток */
-.food-card {
-    width: 100%;
-    max-width: 300px; /* Максимальна ширина */
-    overflow: hidden; /* Ховає виступаючі елементи */
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: var(--secondary-color);
+        margin: 0.5rem auto 0;
+    }
+
+.food-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .card {
-    width: 250px;
-    overflow: hidden; /* Обрізає зайве */
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
 }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
 
     .card img {
         width: 100%;
-        height: 160px;
+        height: 200px;
         object-fit: cover;
-        border-radius: 8px 8px 0 0; /* Закруглені кути зверху */
+        object-position: center;
+        border-bottom: 1px solid #eee;
     }
 
-/* Responsive Design */
+.card-content {
+    padding: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* ===== ORDER FORM ===== */
+.order {
+    padding: 4rem 5%;
+    background-color: var(--card-bg);
+}
+
+.order-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: var(--border-radius);
+        font-family: inherit;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .food-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .card img {
+        height: 180px;
     }
 }
