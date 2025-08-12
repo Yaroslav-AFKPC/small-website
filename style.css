@@ -42,11 +42,20 @@ nav a {
 }
 
 /* Food Cards */
-.food-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+/* Фіксуємо розмір фото у картках */
+.food-card img {
+    width: 100%;
+    height: 180px; /* Фіксована висота */
+    object-fit: cover; /* Обрізає зайве, зберігаючи пропорції */
+    object-position: center; /* Центрує зображення */
+    border-radius: 8px 8px 0 0; /* Закруглені кути зверху */
+}
+
+/* Додаткові покращення для карток */
+.food-card {
+    width: 100%;
+    max-width: 300px; /* Максимальна ширина */
+    overflow: hidden; /* Ховає виступаючі елементи */
 }
 
 .card {
