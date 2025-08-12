@@ -1,10 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodExpress � Food Delivery</title>
+    <title>FoodExpress - Food Delivery</title>
+    <meta name="description" content="Fast delivery of fresh food in your city. Order your favorite dishes online!">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -12,64 +16,164 @@
         <div class="logo">FoodExpress</div>
         <nav>
             <a href="#menu">Menu</a>
-            <a href="#advantages">Why Us?</a>
+            <a href="#advantages">Benefits</a>
+            <a href="#reviews">Reviews</a>
             <a href="#order">Order</a>
         </nav>
-        <button class="btn-call">Call Me</button>
+        <button class="btn btn-primary">Request Callback</button>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <h1>Fast Delivery of Fresh Food</h1>
-        <p>Cooked with love, delivered with care</p>
-        <button class="btn-menu">View Menu</button>
+        <p>Cooked with love, delivered with care. Your favorite dishes in just 45 minutes!</p>
+        
     </section>
 
     <!-- Menu Section -->
     <section id="menu" class="menu">
-        <h2>Popular Dishes</h2>
+        <h2 class="section-title">Our Menu</h2>
         <div class="food-cards">
+            <!-- Card 1 -->
             <div class="card">
-                <img src="burger.jpg" alt="Burger">
-                <h3>Classic Burger</h3>
-                <p>$5.99</p>
-                <button class="btn-buy">Add to Cart</button>
+                <img src="burger.jpg" alt="Classic Burger">
+                <div class="card-content">
+                    <h3>Classic Burger</h3>
+                    <p>Juicy beef patty with cheddar cheese and fresh vegetables</p>
+                    <span class="price">$5.50</span>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
             </div>
 
+            <!-- Card 2 -->
             <div class="card">
-                <img src="soda.jpg" alt="Soda">
-                <h3>Soda</h3>
-                <p>$2</p>
-                <button class="btn-buy">Add to Cart</button>
+                <img src="pizza.jpg" alt="Pepperoni Pizza">
+                <div class="card-content">
+                    <h3>Pepperoni Pizza</h3>
+                    <p>Thin crust with spicy pepperoni and mozzarella</p>
+                    <span class="price">$8.00</span>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
             </div>
 
+            <!-- Card 3 -->
             <div class="card">
-                <img src="pizza.jpg" alt="Pizza">
-                <h3>Pizza</h3>
-                <p>$9</p>
-                <button class="btn-buy">Add to Cart</button>
+                <img src="salad.jpg" alt="Caesar Salad">
+                <div class="card-content">
+                    <h3>Caesar Salad</h3>
+                    <p>Chicken, romaine lettuce, croutons, parmesan and Caesar dressing</p>
+                    <span class="price">$4.50</span>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
             </div>
 
-            <!-- Add 2-3 more cards -->
+            <!-- Card 4 -->
+            <div class="card">
+                <img src="pasta.jpg" alt="Carbonara Pasta">
+                <div class="card-content">
+                    <h3>Carbonara Pasta</h3>
+                    <p>Spaghetti with creamy sauce made with bacon, eggs and parmesan</p>
+                    <span class="price">$6.50</span>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Order Form -->
+    <!-- Advantages Section -->
+    <section id="advantages" class="advantages">
+        <h2 class="section-title">Our Benefits</h2>
+        <div class="advantages-grid">
+            <div class="advantage-card">
+                <img src="delivery-icon.png" alt="Fast Delivery">
+                <h3>Fast Delivery</h3>
+                <p>We deliver orders within 45 minutes</p>
+            </div>
+            <div class="advantage-card">
+                <img src="quality-icon.png" alt="Quality Ingredients">
+                <h3>Quality Ingredients</h3>
+                <p>We use only fresh and natural products</p>
+            </div>
+            <div class="advantage-card">
+                <img src="chef-icon.png" alt="Experienced Chefs">
+                <h3>Experienced Chefs</h3>
+                <p>Our chefs cook with love and professional approach</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <h2 class="section-title">Customer Reviews</h2>
+        <div class="reviews-container">
+            <div class="review">
+                <img src="user.png" alt="Andrew">
+                <h3>Andrew</h3>
+                <p>"Very tasty burgers! Have ordered several times, always fast and hot."</p>
+                <div class="rating">★★★★★</div>
+            </div>
+            <div class="review">
+                <img src="user.png" alt="Olga">
+                <h3>Olga</h3>
+                <p>"The best carbonara pasta in town! Recommended for all Italian cuisine lovers."</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
     <section id="order" class="order">
-        <h2>Place Your Order</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="tel" placeholder="Phone" required>
-            <input type="text" placeholder="Address">
-            <button type="submit" class="btn-submit">Order Now</button>
-        </form>
+        <h2 class="section-title">Place Your Order</h2>
+        <div class="order-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <input type="text" id="address" placeholder="Enter your address" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Notes</label>
+                    <textarea id="message" placeholder="Your special requests..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit">Place Order</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p> 2024 FoodExpress. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacts</h3>
+                <p>+1 234 567 890</p>
+                <p>foodexpress@example.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Working Hours</h3>
+                <p>Mon-Fri: 10:00 - 22:00</p>
+                <p>Sat-Sun: 11:00 - 23:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Social Media</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                    <a href="#"><img src="images/telegram-icon.png" alt="Telegram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 FoodExpress. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
